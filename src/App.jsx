@@ -1,63 +1,34 @@
-import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Outlet } from "react-router-dom";
+import './Style.css';
 
 function App() {
   return (
     <div className="App">
       <header className="constant">
-           <h1>asd</h1>
+        <h1>Ételfutár®</h1>
       </header>
-      <Navbar expand="lg" className="nav">
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-            <article>
-            
-            <p>Fedezd fel a nemzetközi konyha ízletes világát, ahol a hagyományos fogások és a modern gasztronómiai élmények találkoznak! A Ételfutár® célja, hogy egyszerűbbé és élvezetesebbé tegye számodra a finom ételek rendelését, bármilyen alkalomra.</p>
-            <h3>Akciók és kedvezmények</h3>
-            <p>Ne felejts el körülnézni aktuális akcióink között! Rendszeresen kínálunk kedvezményeket és különleges ajánlatokat, hogy még jobban kihasználhasd a Ételfutár® előnyeit.</p>
-
-            <h3 className="test" onClick="Cities()">Rendelj Most!</h3>
-
-            <p>Legyen szó egy családi vacsoráról, baráti összejövetelről vagy csak egy egyszerű ebédről, a Ételfutár® a tökéletes választás számodra! Kényeztesd magad a legfinomabb magyar ételekkel, és tapasztald meg a gyors és megbízható kiszállítást.</p>
-            <h3>Miért rendeljen tőlünk?</h3>
-            <p>Rendelj egyszerűen a legjobb éttermekből, és mi házhoz szállítjuk a kedvenc ételeidet gyorsan, kényelmesen, akár 30 percen belül!</p>
-            <ul>
-              <li>több mint 100 étterem közül válogathatsz! Legyen szó külföldi vagy hazai éttermekről</li>
-              <li>Kedvezmények a hűséges vásárlóknak</li>
-              <li>Kényelmes és biztonságos online rendelés és fizetés.</li>
-              <li>Az ételnek nincs lába! Rendeld meg a Ételfutár®-tól</li>
-            </ul>
-            </article>
-            <aside>
-              
-            </aside>
-            <footer>
-              <p>2024 Ételfutár® - Minden jog fenntartva.</p>
-            </footer>
+        <nav>
+        <ul className="nav">
+          <li data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-basket2-fill" viewBox="0 0 16 16">
+              <path d="M5.929 1.757a.5.5 0 1 0-.858-.514L2.217 6H.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h.623l1.844 6.456A.75.75 0 0 0 3.69 15h8.622a.75.75 0 0 0 .722-.544L14.877 8h.623a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1.717L10.93 1.243a.5.5 0 1 0-.858.514L12.617 6H3.383zM4 10a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0zm3 0a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0zm4-1a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1" />
+            </svg>
+          </li>
+          <li style={{padding:0}}><select>
+            <option selected disabled hidden>Language</option>
+            <option value="HU">HU</option>
+            <option value="EN">EN</option>
+          </select></li>
+          <li data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">reg</li>
+          <li data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">log</li>
+          <li onclick="Welcome()">start</li>
+        </ul>
+      </nav>
+      <Outlet />
+      <footer>
+        <p>2024 Ételfutár® - Minden jog fenntartva.</p>
+      </footer>
     </div>
   );
 }
